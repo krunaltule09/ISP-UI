@@ -8,8 +8,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
   width: 100vw;
   margin: 0;
+  font-size: 18px;
+}
+
+.outer-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid brown;
+  border-radius: 20px;
+  padding: 20px 5px;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  width: 40%;
 }
 
 .wrapper {
@@ -24,18 +39,22 @@
   justify-content: center;
 }
 
+.logo-img {
+  width: 250px;
+}
+
 .wrapper input[type='text'] {
   padding: 10px 25px;
   background: transparent;
-  width: 60vw;
+  width: 50%;
   border: none;
   line-height: 1.2em;
   border-bottom: 1px solid black;
-
+  font-size: inherit;
   margin-right: 5px;
 
   /* border-radius: 50px 0 0 50px; */
-  font-size: 18px;
+
   color: black;
 }
 .wrapper input[type='text'].error {
@@ -47,18 +66,16 @@
   width: 20vw;
   border: none;
   margin-right: 5px;
-
-  font-size: 18px;
 }
 
 .wrapper button {
   padding: 10px 5px;
-  width: 20vw;
+  width: 200px;
   border: none;
 
   margin-right: 5px;
   border-radius: 50px;
-  font-size: 18px;
+
   background-color: brown;
   color: white;
   cursor: pointer;
@@ -71,34 +88,48 @@
 
 .submit-btn {
   transition: transform 0.1s ease 0.1s;
+  font-size: inherit;
 }
 
 .submit-btn:hover {
   transform: scale(1.05);
 }
 
-.mt10 {
-  margin-top: 10px;
-}
-.mt15 {
-  margin-top: 15px;
-}
+@media only screen and (max-width: 414px) {
+  .outer-wrapper {
+    padding: 5px;
+    width: 90vw;
+    height: 80vh;
+  }
 
-.mt20 {
-  margin-top: 20px;
-}
-.mt5 {
-  margin-top: 5px;
-}
-
-@media only screen and (min-width: 900px) {
   .wrapper {
-    width: 700px;
+    font-size: 15px;
+  }
+  .logo-img {
+    width: 150px;
+  }
+
+  .submit-btn {
+    width: 60% !important;
+  }
+
+  .wrapper input[type='text'] {
+    width: 90%;
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 768px) {
+  .outer-wrapper {
+    width: 80%;
+  }
+  .wrapper input[type='text'] {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .outer-wrapper,
   .wrapper {
-    width: 100vw;
+    width: 900px;
   }
 }
